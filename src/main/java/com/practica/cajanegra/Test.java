@@ -10,21 +10,20 @@ public class Test {
     }
     public static void Test1(){
 
-        BinaryTree arbol = new BinaryTree("1");
+        BinaryTree arbol = new BinaryTree("0");
+        Node node_1 = arbol.insert("1", arbol.getRoot(), true);
+        Node node_2 = arbol.insert("2", arbol.getRoot(), false);
 
-        Node node_2 = arbol.insert("2", arbol.getRoot(), true);
-        arbol.insert("3", arbol.getRoot(), false);
+        Node node_3 = arbol.insert("3", node_1, true);
+        Node node_4 = arbol.insert("4", node_1, false);
 
-        // Node node3 = arbol.search("3");
-        Node node_4 = arbol.insert("4", node_2, true);
+        Node node_5 = arbol.insert("5", node_2, true);
+        Node node_6 = arbol.insert("6", node_2, false);
 
-        Node node_5 = arbol.insert("5", node_4, true);
+        Node node_7 = arbol.insert("7", node_3, true);
+        Node node_8 = arbol.insert("8", node_3, false);
 
-
-        arbol.insert("6", arbol.search("3"), true);
-        /* Podemos insertar un nodo hijo a un nodo buscandolo por su contenido en el arbol*/
-
-        System.out.println("Profundidad del arbol: " + arbol.depth());
+        System.out.println("Profundidad del arbol: " + arbol.depth(arbol.getRoot()));
 
         System.out.println(arbol.toString());
     }
